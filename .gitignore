@@ -1,0 +1,223 @@
+### C
+# Object files
+*.o
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Debug files
+*.dSYM/
+*.idb
+*.pdb
+
+### C++
+# Object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Debug files
+*.dSYM/
+*.idb
+*.pdb
+
+### C#
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directory
+.vs/
+
+# User-specific files
+*.suo
+*.user
+
+# Debug symbols
+*.pdb
+
+# NuGet Packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# .NET build artifacts
+artifacts/
+
+# Publish output
+publish/
+
+### Java
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+### Python
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# dotenv environment variable files
+.env
+
+# Virtual environments
+.venv
+env/
+venv/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.pytest_cache/
+
+# Type checkers
+.mypy_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+# .python-version
+
+### Windows
+# Windows thumbnail cache files
+Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+### Linux
+# Backup files
+*~
+
+# Temporary files from deleted open files
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder
+.Trash-*
+
+# NFS temporary files
+.nfs*
+
+### VisualStudio
+# User-specific files
+*.suo
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directory
+.vs/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Publish Web Output
+*.[Pp]ublish.xml
+
+### VS Code
+# VSCode settings (keep shared configuration)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
