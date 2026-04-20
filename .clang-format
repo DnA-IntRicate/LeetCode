@@ -1,0 +1,110 @@
+# .clang-format
+# See: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+# Base style
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+ContinuationIndentWidth: 4
+UseTab: Never
+ColumnLimit: 140
+InsertNewlineAtEOF: true
+LineEnding: CRLF
+Standard: Latest
+
+# Spaces
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpaceInEmptyBlock: true
+SpaceBeforeAssignmentOperators: true
+Cpp11BracedListStyle: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceAfterCStyleCast: false
+SpacesInContainerLiterals: true
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+
+# Newlines / empty lines
+KeepEmptyLines:
+  AtStartOfBlock: true
+  AtStartOfFile: false
+  AtEndOfFile: false
+MaxEmptyLinesToKeep: 2
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllArgumentsOnNextLine: false
+EmptyLineBeforeAccessModifier: Always
+InsertTrailingCommas: Wrapped
+
+# Braces & indentation
+BreakBeforeBraces: Allman
+BreakBeforeBinaryOperators: NonAssignment
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
+IndentCaseLabels: true
+IndentRequiresClause: true
+IndentExternBlock: true
+IndentExportBlock: true
+IndentGotoLabels: true
+IndentWrappedFunctionNames: true
+LambdaBodyIndentation: Signature
+NamespaceIndentation: All
+
+# Alignment
+AlignAfterOpenBracket: false
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments:
+  Enabled: true
+  AlignCompound: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  PadOperators: true
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false
+
+# Include directives
+# NOTE: Auto sorting is disabled because of many, many possible issues that can arise from changing
+#       include ordering.
+#
+SortIncludes: false
+IncludeBlocks: Preserve
+
+# Preprocessor
+IndentPPDirectives: AfterHash
+PPIndentWidth: -1
+
+# Pointers
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Structure
+PackConstructorInitializers: NextLineOnly
+BreakConstructorInitializers: BeforeColon
+ReflowComments: true
+AccessModifierOffset: -4
+QualifierAlignment: Custom
+QualifierOrder: ['friend', 'static', 'inline', 'constexpr', 'const', 'restrict', 'volatile', 'type']
+# BinPackLongBracedList: false (ver: clang 21)
+BinPackArguments: false
+BinPackParameters: true
+# SeparateDefinitionBlocks: true
+
+# Penalties
+PenaltyBreakAssignment: 1000
+PenaltyBreakBeforeFirstCallParameter: 1000

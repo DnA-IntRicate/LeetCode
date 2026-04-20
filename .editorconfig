@@ -1,0 +1,75 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Global defaults
+[*]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_whitespace = true
+charset = utf-8
+
+# Preserve whitespace for Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# Force LF for shell scripts
+[*.bash]
+end_of_line = lf
+[*.sh]
+end_of_line = lf
+[*.zsh]
+end_of_line = lf
+
+# Two-space indentation for YAML
+[*.yml]
+end_of_line = lf
+indent_size = 2
+tab_width = 2
+[*.yaml]
+end_of_line = lf
+indent_size = 2
+tab_width = 2
+
+# Force LF for TOML files
+[*.toml]
+end_of_line = lf
+
+# Force LF for CMake files
+[*.cmake]
+end_of_line = lf
+[CMakeLists.txt]
+end_of_line = lf
+
+# Force LF for configuration files
+[*.cfg]
+end_of_line = lf
+[*.config]
+end_of_line = lf
+[*.init]
+end_of_line = lf
+[*.ini]
+end_of_line = lf
+
+# Force LF for Makefiles
+[Makefile]
+end_of_line = lf
+
+# Force LF and two-space indentation for clang configuration files
+[.clang-*]
+end_of_line = lf
+indent_size = 2
+tab_width = 2
+
+# Force LF and two-space indentation for git configuration files
+[.git*]
+end_of_line = lf
+indent_size = 2
+tab_width = 2
+# .gitmodules Requires tabs
+[.gitmodules]
+indent_style = tab

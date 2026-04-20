@@ -1,0 +1,64 @@
+# .clang-tidy
+# See: https://clang.llvm.org/extra/clang-tidy/
+
+Checks: >
+  -*,
+  readability-*,
+  modernize-*,
+  performance-*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  clang-analyzer-*,
+  hicpp-*,
+  misc-*
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+AnalyzeTemporaryDtors: false
+FormatStyle: file   # Use .clang-format for formatting checks
+
+CheckOptions:
+  # Naming rules
+  - key: readability-identifier-naming.ClassCase
+    value: PascalCase
+  - key: readability-identifier-naming.StructCase
+    value: PascalCase
+  - key: readability-identifier-naming.EnumCase
+    value: PascalCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: PascalCase
+  - key: readability-identifier-naming.FunctionCase
+    value: PascalCase
+  - key: readability-identifier-naming.VariableCase
+    value: camelCase
+  - key: readability-identifier-naming.ParameterCase
+    value: camelCase
+  - key: readability-identifier-naming.PrivateMemberPrefix
+    value: 'm_'
+  - key: readability-identifier-naming.PrivateStaticPrefix
+    value: 's_'
+  - key: readability-identifier-naming.GlobalVariablePrefix
+    value: 'g_'
+  - key: readability-identifier-naming.InternalSymbolPrefix
+    value: '_'
+  - key: readability-identifier-naming.TemplateParameterCase
+    value: PascalCase
+  - key: readability-identifier-naming.TemplateParameterPrefix
+    value: '_'
+  - key: readability-identifier-naming.NamespaceCase
+    value: PascalCase
+  - key: readability-identifier-naming.ConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.PreprocessorMacroCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.PreprocessorMacroPrefix
+    value: '_IE_'
+
+  # Boolean naming convention (Is, Has, Can, Should)
+  - key: readability-identifier-naming.BooleanFunctionPrefix
+    value: 'Is|Has|Can|Should'
+  - key: readability-identifier-naming.BooleanVariablePrefix
+    value: 'Is|Has|Can|Should'
+
+  # Modern C++ / safety
+  - key: modernize-use-nullptr.NullMacros
+    value: 'NULL'
