@@ -3,10 +3,10 @@
 #include <unordered_map>
 
 
-class Solution 
+class Solution
 {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target) 
+    std::vector<int> twoSum(std::vector<int>& nums, int target)
     {
         // Value, Index
         std::unordered_map<int, int> seen;
@@ -14,13 +14,13 @@ public:
         {
             int num = nums[i];
             int complement = target - num;
-            
+
             if (seen.contains(complement))
                 return { seen[complement], (int)i };
 
             seen[num] = i;
         }
-        
+
         return {};
     }
 };
