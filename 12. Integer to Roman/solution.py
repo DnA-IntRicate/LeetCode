@@ -1,23 +1,29 @@
 class Solution:
-    NUMERAL_MAP: dict[int, str] = {
-        1: "I",
-        4: "IV",
-        5: "V",
-        9: "IX",
-        10: "X",
-        40: "XL",
-        50: "L",
-        90: "XC",
-        100: "C",
-        400: "CD",
-        500: "D",
-        900: "CM",
-        1000: "M"
-    }
+    ROMAN_VALUES: list[tuple[int, str]] = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I")
+    ]
 
-    def intToRoman(self, num: int) -> str:
-        if num in self.NUMERAL_MAP.keys():
-            return self.NUMERAL_MAP[num]
+    def intToRoman(self, num: int, memo: dict[int, str] = {}) -> str:
+        if num in memo.keys():
+            return memo[num]
 
-        highest = max(x for x in self.NUMERAL_MAP.keys() if x <= num)
-        return self.NUMERAL_MAP[highest] + self.intToRoman(num - highest)
+        res = []
+        for value, numeral in self.ROMAN_VALUES:
+            while num >= value:
+                res.append(numeral)
+                num -= value
+
+        memo[num] = "".join(res)
+        return memo[num]
