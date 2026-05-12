@@ -1,5 +1,4 @@
 #include <string>
-#include <unordered_map>
 
 
 class Solution
@@ -7,33 +6,15 @@ class Solution
 public:
     std::string intToRoman(int num)
     {
-        if (NUMERAL_MAP.count(num) > 0)
-            return NUMERAL_MAP[num];
+        // Roman numerals have a tiny fixed range:
+        // 1 <= num <= 3999
 
-        int highest = -1;
-        for (const auto& [digit, numeral] : NUMERAL_MAP)
-        {
-            if ((digit <= num) && (digit > highest))
-                highest = digit;
-        }
+        // Digit lookup tables
+        static const std::string THOUSANDS[] = { "", "M", "MM", "MMM" };
+        static const std::string HUNDREDS[] = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+        static const std::string TENS[] = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+        static const std::string ONES[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
 
-        return NUMERAL_MAP[highest] + intToRoman(num - highest);
+        return THOUSANDS[num / 1000] + HUNDREDS[(num % 1000) / 100] + TENS[(num % 100) / 10] + ONES[num % 10];
     }
-
-private:
-    std::unordered_map<int, std::string> NUMERAL_MAP = {
-        { 1,    "I"  },
-        { 4,    "IV" },
-        { 5,    "V"  },
-        { 9,    "IX" },
-        { 10,   "X"  },
-        { 40,   "XL" },
-        { 50,   "L"  },
-        { 90,   "XC" },
-        { 100,  "C"  },
-        { 400,  "CD" },
-        { 500,  "D"  },
-        { 900,  "CM" },
-        { 1000, "M"  }
-    };
 };
