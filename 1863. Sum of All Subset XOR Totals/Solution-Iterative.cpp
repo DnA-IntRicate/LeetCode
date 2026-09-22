@@ -9,7 +9,7 @@ public:
         if (nums.empty())
             return 0;
 
-        const size_t n = nums.size();
+        const size_t n           = nums.size();
         const size_t subsetCount = 1 << n;
 
         std::vector<std::vector<int>> subsets(subsetCount);
@@ -17,30 +17,16 @@ public:
 
         for (size_t mask = 0; mask < subsetCount; ++mask)
         {
-            std::vector<int> subset;
+            int xorSum = 0;
             for (size_t i = 0; i < n; ++i)
             {
                 if (mask & (1 << i))
-                    subset.push_back(nums[i]);
+                    xorSum ^= nums[i];
             }
 
-            // Sum here
-            sum += XORSum(subset);
+            sum += xorSum;
         }
 
         return sum;
-    }
-
-private:
-    int XORSum(const std::vector<int>& nums)
-    {
-        if (nums.empty())
-            return 0;
-
-        int res = nums[0];
-        for (size_t i = 1; i < nums.size(); ++i)
-            res ^= nums[i];
-
-        return res;
     }
 };
